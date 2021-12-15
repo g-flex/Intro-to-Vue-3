@@ -12,8 +12,21 @@
 		<div class="row centered">
 			<div class="col-6 mobile-12">
 				<h1>{{title}}</h1>
-				<p>{{description}}</p>
+				<p>{{description()}}</p>
+				<div class="col-12 centered">
+					<div class="col-3 mt-50">
+						<img :src="imgSrc">
+					</div>
+				</div>
 			</div>
+		</div>
+		<div class="row centered">
+			<!-- v-if -> puts/removes element from the dom -->
+			<div class="col-12 mt-200" v-if="isBtc"><h3>Is BTC</h3></div>
+			<div class="col-12 mt-200" v-else><h3>Is SOL</h3></div>
+			<!-- ALSO ACHIEVABLE with this notation, which adds style: display: none;
+			<div class="col-12 mt-30" v-show="isBtc"><h3>Is BTC</h3></div>
+			<div class="col-12 mt-30" v-show="!isBtc"><h3>Is SOL</h3></div>-->
 		</div>
 	</div>
 </div>

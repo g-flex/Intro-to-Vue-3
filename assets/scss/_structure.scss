@@ -86,3 +86,13 @@
 	filter: blur(2px);
 	-webkit-filter: blur(2px);
 }
+
+.m-auto { margin: auto; }
+@for $i from 1 through 200 {
+	.p-#{$i} { padding: #{$i}px 0 !important; }
+	.pb-#{$i} { padding-bottom: #{$i}px !important; }
+	.pt-#{$i} { padding-top: #{$i}px !important; }
+	.m-#{$i} { margin: #{$i}px 0 !important; }
+	.mb-#{$i} { margin-bottom: #{$i}px !important; }
+	.mt-#{$i} { margin-top: #{$i}px !important; }
+}

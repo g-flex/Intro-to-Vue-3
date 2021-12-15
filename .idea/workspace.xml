@@ -2,41 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b7b45935-c71d-4bf3-add3-22423b3df3e6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/css/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/css/style.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/scss/_base.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/scss/_components.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/scss/_fns.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/scss/_mixins.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/scss/_structure.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/scss/_variables.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/scss/components/_button.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/scss/components/_button_icon.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/scss/components/_checkbox.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/scss/components/_counter.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/scss/components/_default_list.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/scss/components/_dropdown.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/scss/components/_dropdown_button_row.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/scss/components/_feedback.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/scss/components/_form.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/scss/components/_icon.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/scss/components/_key_value_list.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/scss/components/_key_value_price_list.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/scss/components/_list_bullets_lines.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/scss/components/_loader.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/scss/components/_menu_button.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/scss/components/_pages_buttons.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/scss/components/_pre.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/scss/components/_radio.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/scss/components/_select.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/scss/components/_state_tag.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/scss/components/_switch.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/scss/components/_textarea.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/scss/components/_vanilla_calendar.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/scss/index.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/scss/style.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/styles.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/style.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/style.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/_structure.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/_structure.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/main.js" afterDir="false" />
     </list>
