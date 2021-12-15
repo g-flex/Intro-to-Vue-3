@@ -22,18 +22,44 @@
 		</div>
 		<div class="row centered">
 			<!-- v-if -> puts/removes element from the dom -->
-			<div class="col-12 mt-200" v-if="isBtc===true"><h3>Is BTC</h3></div>
-			<div class="col-12 mt-200" v-else-if="isBtc === 'SOL'"><h3>Is SOL</h3></div>
-			<div class="col-12 mt-200" v-else><h3>Is other crypto</h3></div>
+			<div class="col-12 mt-50" v-if="isBtc===true"><h3>Is BTC</h3></div>
+			<div class="col-12 mt-50" v-else-if="supportedCryptos.find(c=>{return c.symbol==='SOL'})"><h3>Is {{isBtc}}</h3></div>
+			<div class="col-12 mt-50" v-else><h3>Is other crypto</h3></div>
 			<!-- ALSO ACHIEVABLE with this notation, which adds style: display: none;
 			<div class="col-12 mt-30" v-show="isBtc"><h3>Is BTC</h3></div>
 			<div class="col-12 mt-30" v-show="!isBtc"><h3>Is SOL</h3></div>-->
 		</div>
 	</div>
+
+	<div class="container" v-for="crypto in supportedCryptos">
+		<div class="row centered">
+			<div class="col-6 mobile-12">
+				<form @submit="submitForm($event)" :id="'explore-'+crypto.symbol.toLowerCase()+'-form'">
+					<h2>{{crypto.name}}</h2>
+					<div class="input">
+						<label :for="crypto.symbol.toLowerCase()+'-address-input'">Insert address</label>
+						<input :key="crypto.symbol" placeholder="bc1000aaa000aaa000aaa000" type="text" :name="crypto.symbol.toLowerCase()+'-address-input'" :id="crypto.symbol.toLowerCase()+'-address-input'" value="" />
+					</div>
+					<pre class="pre"><code></code></pre>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="loader-container d-n" id="loader">
+	<div class="loader">
+		<div class="loader__part loader__part--1"></div>
+		<div class="loader__part loader__part--2"></div>
+		<div class="loader__part loader__part--3"></div>
+	</div>
 </div>
 
 <!-- Import Js -->
 <script src="./main.js"></script>
+<script src="./assets/js/Loader.js"></script>
+<script src="./assets/js/API.js"></script>
+<script src="./assets/js/base.js"></script>
 <script>
 	const mountedApp = app.mount('#app')
 </script>
