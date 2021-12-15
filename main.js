@@ -2,13 +2,19 @@ const app = Vue.createApp({
     data() {
         return {
             title: 'Vue explorer',
-            isBtc: 'SOL',
+            isBtc: true,
             description: ()=> { return 'Simple js ' + (this.isBtc === true ? 'btc' : this.isBtc) + ' explorer made with vue.js' },
             imgSrc: './assets/images/socks_blue.jpg',
             supportedCryptos: [
                 { name: 'bitcoin', symbol: 'BTC', placeholder: 'bc1000aaa000aaa000aaa000', fn: 'getBtcAddress' },
                 { name: 'solana', symbol: 'SOL', placeholder: '9LC426VbNywjPjXb6JjxSNzSAZgM', fn: 'getSolAccountTxs' }
-            ]
+            ],
+            styles: {
+                img: {
+                    borderRadius: '5px',
+                    border: '2px solid '+COLORS.txt_1
+                }
+            }
         };
     },
     methods: {

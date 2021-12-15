@@ -15,7 +15,7 @@
 				<p>{{description()}}</p>
 				<div class="col-12 centered">
 					<div class="col-3 mt-50">
-						<img :src="imgSrc" @click="()=>{console.log('clicked img')}">
+						<img :src="imgSrc" :style="styles.img">
 					</div>
 				</div>
 			</div>
@@ -33,7 +33,7 @@
 
 	<div class="container" v-for="crypto in supportedCryptos">
 		<div class="row centered">
-			<div class="col-6 mobile-12">
+			<div class="col-6 mobile-12" :class="{disabled: crypto.symbol === 'SOL'}">
 				<form @submit="submitForm($event, crypto.fn)" :id="'explore-'+crypto.symbol.toLowerCase()+'-form'">
 					<h2>{{crypto.name}}</h2>
 					<div class="input">
@@ -61,7 +61,13 @@
 <script src="./assets/js/API.js"></script>
 <script src="./assets/js/base.js"></script>
 <script>
-	const mountedApp = app.mount('#app')
+    const bodyStyle = getComputedStyle(document.body);
+    const COLORS_CONSTANTS = ['white', 'txt_1', 'txt_2', 'txt_3', 'txt_4', 'txt_secondary'];
+    const COLORS = {};
+    COLORS_CONSTANTS.forEach(color => {
+        COLORS[color] = bodyStyle.getPropertyValue('--'+color);
+	});
+    const mountedApp = app.mount('#app');
 </script>
 </body>
 </html>
