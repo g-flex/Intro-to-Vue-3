@@ -1,0 +1,85 @@
+$rootDir: "";
+$imgDir: "assets/img/";
+
+$font: "Helvetica", sans-serif;
+$font_size: 16px;
+$font_size_small: 12px;
+$font_size_x_small: 9px;
+$font_weight: 500;
+$font_weight_bold: 700;
+$baseMargin: 20px;
+$basePadding: 20px;
+
+$bottomImageHeight: 212;
+$bottomImageWidth: 1888;
+$aspectRatio: $bottomImageHeight/$bottomImageWidth;
+
+$transition: cubic-bezier(0.785, 0.135, 0.150, 0.860);
+$dropdown_transition: opacity .3s linear, max-height .3s $transition;
+$dropdown_horizontal_transition: opacity .3s linear, width .3s $transition;
+
+$white: #ffffff;
+$txt_1: #E66465;
+$txt_2: #3891A6;
+$txt_3: #4CE0B3;
+$txt_4: #D6FFB7;
+$txt_secondary: #212439;
+
+$bg_body: linear-gradient(0deg, rgb(230, 100, 101) 0%, rgb(94, 98, 126) 39%, rgb(2, 70, 103) 100%);
+$bg_body_transparent: linear-gradient(0deg, rgba(230, 100, 101, .4) 0%, rgba(94, 98, 126, .4) 39%, rgba(2, 70, 103, .4) 100%);
+$bg_primary: #024667;
+$bg_window_opacity: rgba(#9DAA9D, .4);
+$bg_titlebar_dark: #00202f;
+$bg_titlebar_light: rgb(1, 57, 84);
+$bg_menu: rgba(#56292a, .7);
+$bg_menu_opaque: #5a3a3a;
+$bg_btn_menu: #b07e7e;
+$bg_btn_menu_active: #c1494a;
+$bg_btn_menu_hover: rgba(#E2AF96, .5);
+
+$bg_btn: rgba(#ef8d8e, .5);
+$bg_btn_hover: #E2AF96;
+$txt_btn: #750303;
+$border_btn: #ab2b34;
+
+$txt_feedback: #03a3f1;
+
+$bg_textarea: rgba(#01202f, .4);
+$bg_dropdown_arrow: #023f5b;
+
+$bg_state: #bfd2bf;
+$state0: #ab2b34;
+$state1: #57A671;
+$state2: #7A8574;
+$state3: rgba(#7A8574, .82);
+$state4: rgba(#7A8574, .63);
+$state5: rgba(#ab2b34, .63);
+$state6: rgba(#ab2b34, .82);
+
+$bg_calendar: $bg_primary;
+$bg_calendar_arrow: $border_btn;
+$bg_calendar_week: $bg_titlebar_light;
+
+//variables frontend//
+
+$bg_primary_fe: #CED8CE;
+$pseudo-element-color: #D80000;
+$uderline_menu: rgba(#AB2B34, .2);
+$background-color-carousel-header: rgba(#454D41, .3);
+$input-carousel: rgba($txt_1, .5);
+$overlay-background-preview: rgba($white, .8);
+$overlay-background-carousel: rgba($white, .9);
+$overlay-background-menu: rgba($white, .4);
+$overlay-pseudo-element: rgba($white, .2);
+$color-woman: #E2AF96;
+$color-man: #CED8CE;
+$color-children: #D28056;
+$bg_btn_menu_hover_fe: rgba(#E2AF96, .25);
+$bg_btn_detail_hover_fe: rgba($bg_primary_fe, .25);
+$color_shadow_25: rgba(#000000, .25);
+$color_shadow_10: rgba(#000000, .10);
+$green_state2: rgba(#7A8574, .8);
+$green_state3: rgba($bg_textarea, .8);
+$green_footer1: #CED8CE;
+$green_footer2: #EEF1EE;
+

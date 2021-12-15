@@ -1,0 +1,165 @@
+.v-cal-id {
+	*, & :after, & :before {
+		-webkit-box-sizing: border-box;
+		box-sizing: border-box
+	}
+
+	& {
+		background-color: $bg_calendar;
+		border-radius: 0;
+		border: 1px solid rgba($bg_calendar, .5);
+		-webkit-box-shadow: 0 4px 22px 0 rgba(0, 0, 0, .05);
+		box-shadow: 0 4px 22px 0 rgba(0, 0, 0, .05);
+		margin: 0 auto;
+		overflow: hidden;
+		width: 50%;
+		@media all and (max-width: 1080px){
+			width:100%;
+		}
+	}
+
+	& .vcal-btn {
+		@include transition(transform, .1s);
+		@include noSelect;
+		-webkit-appearance: button;
+		background: transparent;
+		border: 0;
+		pointer-events: all;
+		cursor: pointer;
+		font: inherit;
+		line-height: normal;
+		height: 27px;
+		width: 27px;
+		outline: none;
+		overflow: visible;
+		padding: 0;
+		text-align: center;
+		&:active svg {
+			@include activeButton(.8);
+		}
+	}
+
+	& .vcal-header {
+		-webkit-box-align: center;
+		-ms-flex-align: center;
+		align-items: center;
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		padding: 19.2px 22.4px;
+		padding: 1.2rem 1.4rem;
+		@media all and (max-width: 768px){
+			font-size: $font_size_small;
+		}
+	}
+
+	& .vcal-header svg {
+		fill: $bg_calendar_arrow;
+		stroke: $bg_calendar_arrow;
+		height: 100%;
+		width: 100%;
+		& * {
+			stroke-linecap: round;
+			stroke-width: 1.333px;
+			fill: none;
+		}
+	}
+
+	& .vcal-header__label {
+		@include noSelect;
+		@include truncateString;
+		font-weight: 700;
+		text-align: center;
+		width: 100%
+	}
+
+	& .vcal-week {
+		@include noSelect;
+		background-color: $bg_calendar_week;
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-ms-flex-wrap: wrap;
+		flex-wrap: wrap
+	}
+
+	& .vcal-week span {
+		@include truncateString;
+		@include centered;
+		@include columnFlex;
+		-webkit-box-flex: 0;
+		-ms-flex: 0 0 14.28%;
+		flex: 0 0 14.28%;
+		font-size: $font_size;
+		font-weight: $font_weight_bold;
+		max-width: 14.28%;
+		min-height: 40px;
+		text-align: center;
+		text-transform: uppercase;
+		cursor: default;
+		opacity: .7;
+		@media all and (max-width: 768px){
+			font-size: $font_size_small;
+		}
+		@media all and (max-width: 300px){
+			font-size: $font_size_x_small;
+		}
+
+	}
+
+	& .vcal-body {
+		background-color: $bg_calendar;
+		-ms-flex-wrap: wrap;
+		flex-wrap: wrap
+	}
+
+	& .vcal-body, & .vcal-date {
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex
+	}
+
+	& .vcal-date {
+		@include noSelect;
+		color: $txt_btn;
+		-webkit-box-align: center;
+		-ms-flex-align: center;
+		align-items: center;
+		background-color: $bg_calendar;
+		border-radius: 0;
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: normal;
+		-ms-flex-direction: column;
+		flex-direction: column;
+		-webkit-box-flex: 0;
+		-ms-flex: 0 0 14.28%;
+		flex: 0 0 14.28%;
+		max-width: 14.28%;
+		padding: 19.2px 0;
+		padding: 1.2rem 0;
+	}
+
+	& .vcal-date:not(.vcal-date--disabled) { @include hoverButton; }
+
+	& .vcal-date--active {
+		cursor: pointer
+	}
+
+	& .vcal-date--active:active {
+		@include activeButton;
+	}
+
+	& .vcal-date--today { border: 1px solid $border_btn; }
+
+	& .vcal-date--selected {
+		background-color: $bg_btn_menu_active;
+		border: 1px solid $border_btn;
+	}
+
+	& .vcal-date--disabled {
+		color: $txt_1;
+		border-radius: 0;
+		cursor: not-allowed;
+		opacity: .5
+	}
+}

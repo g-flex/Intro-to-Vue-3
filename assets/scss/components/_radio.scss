@@ -1,0 +1,87 @@
+/*
+ESEMPIO:
+
+	<label class="radio">
+		<p>Pagato</p>
+		<input type="radio" checked="checked" name="example">
+		<span></span>
+	</label>
+
+
+JS:
+
+function validate() {
+        if (document.getElementById('check1').checked) {
+            alert("checked1");
+        } else if (document.getElementById('check2').checked) {
+            alert("checked2");
+        } else if (document.getElementById('check3').checked) {
+            alert("checked3");
+        } else {
+            alert("You didn't check it! Let me check it for you.");
+        }
+}
+
+*/
+
+
+label.radio {
+	@include noSelect;
+	display: block;
+	position: relative;
+	padding-left: 35px;
+	margin-bottom: 12px;
+	cursor: pointer;
+	font-size: 16px;
+	font-weight: $font_weight;
+
+	& input {
+		position: absolute;
+		opacity: 0;
+		cursor: pointer;
+		height: 0;
+		width: 0;
+
+		&:checked ~ span {
+			background-color: rgba($txt_2, .8);
+		}
+		&:checked ~ span:after {
+			opacity: 1;
+		}
+	}
+
+	& span {
+		position: absolute;
+		display: block;
+		top: 0;
+		left: 0;
+		height: 16px;
+		width: 16px;
+		background-color: rgba($txt_2, .8);
+
+		&:after {
+			@include transition(opacity, 50ms);
+			@include pseudo;
+			opacity: 0;
+			left: 5px;
+			top: 5px;
+			width: 6px;
+			height: 6px;
+			background-color: rgba($white, .8);
+			border-radius: 50%;
+		}
+
+		&:before {
+			@include pseudo;
+			display: block;
+			left: 2px;
+			top: 2px;
+			width: 10px;
+			height: 10px;
+			border: 1px solid rgba($white, .5);
+			border-radius: 50%;
+		}
+
+	}
+
+}

@@ -1,0 +1,83 @@
+/*
+
+Esempio:
+
+<div class="counter">
+	<label>Quantità</label>
+	<div>
+		<div class="button-icon button-icon-minus"></div>
+		<input type="text" value="4" pattern="^[0-9]*$" required>
+		<div class="button-icon button-icon-plus"></div>
+	</div>
+</div>
+
+*/
+
+div.counter {
+	@include row;
+	@include centered;
+	max-width: 100%;
+
+	&>div {
+		@include row;
+		@include centered;
+		height: 20px;
+		width: 90px;
+		max-width: 100%;
+		min-width: 60px;
+		background-color: $white;
+
+		& > * { @include noSelect; }
+
+		& .button-icon {
+			&:active { @include activeButton;}
+			width: 20px;
+			height: 20px;
+			cursor: pointer;
+		}
+
+		& input {
+			@include noSelect;
+			font-family: $font;
+			padding: 0;
+			border: none;
+			width: 50px;
+			max-width: calc(100% - 40px);
+			min-width: 20px;
+			height: 100%;
+			text-align: center;
+		}
+	}
+	& label {
+		@include wordWrap;
+		@include truncateString(2);
+		color: $txt_2;
+		font-family: $font;
+		font-size: $font_size_small;
+		margin-right: 10px;
+		max-width: calc(100% - 100px);
+	}
+
+	&.vertical {
+		@include columnFlex;
+		& label {
+			text-align: left;
+			width: 100%;
+			max-width: 100%;
+			margin-right: 0;
+			margin-bottom: 10px;
+		}
+	}
+
+	@media all and (max-width: 1080px) {
+		@include columnFlex;
+		& label {
+			text-align: left;
+			width: 100%;
+			max-width: 100%;
+			margin-right: 0;
+			margin-bottom: 10px;
+		}
+	}
+
+}

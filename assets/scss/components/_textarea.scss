@@ -1,0 +1,129 @@
+/*
+ESEMPIO:
+
+	<div class="input">
+		<label for="input">Nome</label>
+		<input placeholder="Nome" type="text" name="input" id="input" value="Paolo Rossi" />
+	</div>
+
+	<div class="input">
+		<label for="input1">Testo</label>
+		<textarea placeholder="Il tuo testo qui" name="input1" id="input1" cols="15" rows="10" value="your text here"></textarea>
+	</div>
+
+*/
+
+@mixin placeholder() {
+	@include noSelect;
+	color: $txt_2;
+	font-size: $font_size_small;
+	line-height: $font_size_small;
+	visibility: visible;
+}
+
+div.input {
+
+	& input, & textarea {
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+		background-color: $bg_titlebar_light;
+		color: $txt_1;
+		font-family: $font;
+		font-weight: $font_weight;
+		font-size: $font_size;
+		border: 1px solid $bg_titlebar_light;
+		border-radius: 5px;
+		-webkit-border-radius: 5px;
+		padding: 10px;
+		min-width: 100px;
+		width: 100%;
+		text-align: left;
+		position: relative;
+
+		&:-webkit-autofill,
+		&:-webkit-autofill:hover,
+		&:-webkit-autofill:focus,
+		&:-webkit-autofill:active {
+			-webkit-box-shadow: 0 0 0 30px $bg_titlebar_light inset !important;
+		}
+		&:-webkit-autofill{
+			-webkit-text-fill-color: $bg_btn_hover !important;
+		}
+
+		@media all and (max-width: 300px) {
+			min-width: 50px;
+			font-size: $font_size_small;
+		}
+
+		&:focus {
+			-webkit-box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			box-sizing: border-box;
+			outline: 1px solid $bg_btn_menu_active;
+			outline-offset: -1px;
+		}
+
+	}
+
+	& input { height: 30px; }
+
+	& textarea {
+		resize: vertical;
+		min-height: 50px;
+	}
+
+	& .placeholder, & input::placeholder, & textarea::placeholder {
+		@include placeholder;
+	}
+	& input::-ms-input-placeholder, & textarea::-ms-input-placeholder {
+		@include placeholder;
+	}
+	& input:-ms-input-placeholder, & textarea:-ms-input-placeholder {
+		@include placeholder;
+	}
+	& input::-moz-placeholder, & textarea::-moz-placeholder {
+		@include placeholder;
+	}
+	& input::-webkit-input-placeholder, & textarea::-webkit-input-placeholder {
+		@include placeholder;
+	}
+
+	& textarea::placeholder { top: 14px; }
+	& textarea::-ms-input-placeholder { top: 14px; }
+	& textarea:-ms-input-placeholder { top: 14px; }
+	& textarea::-moz-placeholder { top: 14px; }
+	& textarea::-webkit-input-placeholder { top: 14px; }
+
+	@media all and (max-width: 300px) {
+		& textarea::placeholder { top: 12px; }
+		& textarea::-ms-input-placeholder { top: 12px; }
+		& textarea:-ms-input-placeholder { top: 12px; }
+		& textarea::-moz-placeholder { top: 12px; }
+		& textarea::-webkit-input-placeholder { top: 12px; }
+	}
+
+	& label {
+		@include noSelect;
+		text-align: left;
+		display: block;
+		color: $txt_2;
+		font-family: $font;
+		font-size: $font_size_small;
+		margin-bottom: 10px;
+	}
+
+	& input::-webkit-outer-spin-button,
+	& input::-webkit-inner-spin-button {
+		-webkit-appearance: none;
+		margin: 0;
+	}
+	& input[type=number] { -moz-appearance: textfield; }
+
+	& .no-color {
+		color: $txt_2;
+		font-size: $font_size_small;
+		line-height: $font_size_small;
+	}
+
+}

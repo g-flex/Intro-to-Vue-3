@@ -1,0 +1,44 @@
+/*
+EXAMPLE:
+
+<ul class="list-bullets-lines">
+  <li>
+    <h3>Master of Engineering</h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+  </li>
+  <li>
+      <h3>Sed ut perspiciatis</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+  </li>
+  <li>
+      <h3>Nemo enim ipsam voluptatem</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+  </li>
+</ul>
+
+*/
+
+ul.list-bullets-lines {
+    border-left: 5px solid $bg_titlebar_dark;
+    margin-left: 10px;
+    list-style-position: inside;
+    list-style-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAfAgMAAABv3o7tAAAADFBMVEXBw8Dd4N3u8e39//z1rD+PAAAAAWJLR0QAiAUdSAAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB+MFAggcCa9VMDYAAAAdaVRYdENvbW1lbnQAAAAAAENyZWF0ZWQgd2l0aCBHSU1QZC5lBwAAAFNJREFUCNdj+A8GBxhIp5+Ggel/Dgz1IPoLA4M0iL7AwMAOohsYGBhBtAMDA8P+Awz/gBRDPRptj0aDxB0gNEwf3JwHUHNh9vxzYKyHuCOKDPcDANOllFiDB55zAAAAAElFTkSuQmCC');
+	text-align: left;
+
+	li {
+		margin-left: -15px;
+		position: relative;
+		&:not(:first-child) { margin-top: 8px; }
+	}
+
+	h3 {
+		margin-top: -23px;
+		padding-left: 50px;
+		margin-bottom: 8px;
+	}
+
+	h3, p, span {
+		padding-left: 50px;
+	}
+	small { color: $bg_titlebar_dark; }
+}

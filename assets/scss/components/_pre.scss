@@ -1,0 +1,18 @@
+pre.pre {
+	@include smallScrollbar;
+	color: darken($txt_2, 10%);
+	font-size: $font_size_small;
+	background-color: rgba($bg-primary, .4);
+	-webkit-backdrop-filter: blur(12px);
+	backdrop-filter: blur(12px);
+	border-radius: 5px;
+	max-width: 100%;
+	max-height: 500px;
+	overflow-x: auto;
+	overflow-y: auto;
+
+	.string { color: $txt_1; }
+	.key { color: $txt_2 }
+	.number { color: $txt_3; }
+	.boolean, .null { color: $txt_4; }
+}

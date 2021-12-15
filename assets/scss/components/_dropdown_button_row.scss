@@ -1,0 +1,64 @@
+/*
+
+ESEMPIO:
+<div class="row dropdown-button-row">
+	<div class="row">
+		<div class="col-shrink"><div class="button-icon button-icon-plus"></div></div>
+		<div class="col-grow"><p>Aggiungi prodotto</p></div>
+	</div>
+	<div class="dropdown collapsed">
+		<div class="dropdown-content">
+
+		</div>
+	</div>
+</div>
+
+*/
+
+.dropdown-button-row {
+	position: relative;
+	padding: $basePadding;
+	margin-bottom: $baseMargin;
+	background-color: $bg_window_opacity;
+
+	& > .row {
+		@include noSelect;
+		@include alignFlex(center);
+		height: 40px;
+		cursor: pointer;
+		color: $white;
+		border: 1px solid $bg_titlebar_dark;
+		padding: 0 15px;
+		background-color: $bg_textarea;
+
+		& .button-icon {
+			height: 20px;
+			width: 20px;
+			margin-right: 10px;
+		}
+		& .col-grow {
+			@include truncateString(2);
+			@include wordWrap;
+		}
+		& .col-shrink { min-width: 30px; }
+	}
+	@media all and (max-width: 1080px) {
+		@include reducedPadding;
+		& > .row { padding: 0 10px; }
+	}
+	@media all and (max-width: 540px){
+		& > .row { padding: 0 5px; }
+	}
+
+	& > .dropdown .dropdown-content {
+		padding-top: $basePadding;
+		text-align: left;
+		border: 1px solid $bg_titlebar_dark;
+		border-top: none;
+
+		& > .col-12:not(:last-child), & > .row:not(:last-child) { margin-bottom: $baseMargin; }
+		& > .col-12 > *:not(:last-child) { margin: $baseMargin / 2 0; }
+		& > .col-12 > *:last-child { margin-top: $baseMargin / 2; }
+	}
+
+}

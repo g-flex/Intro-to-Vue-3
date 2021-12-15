@@ -1,0 +1,38 @@
+.icon {
+	@include icon;
+	margin-right: 10px;
+
+	&-tel-color { background-image: url("#{$imgDir}svg/icon-tel-color.svg"); }
+	&-email-color { background-image: url("#{$imgDir}svg/icon-email-color.svg"); }
+	&-trash-color { background-image: url("#{$imgDir}svg/icon-trash-color.svg"); }
+	&-orders-color { background-image: url("#{$imgDir}svg/icon-orders-color.svg"); }
+	&-orders { background-image: url("#{$imgDir}svg/icon-orders.svg"); }
+	&-products { background-image: url("#{$imgDir}svg/icon-products-color.svg"); }
+	&-calendar { background-image: url("#{$imgDir}svg/icon-calendar.svg"); }
+
+	&-user-level { background-image: url("#{$imgDir}svg/icon-user-level.svg"); }
+	&-vendor-level { background-image: url("#{$imgDir}svg/icon-vendor-level.svg"); }
+	&-admin-level { background-image: url("#{$imgDir}svg/icon-admin-level.svg"); }
+
+	&-macro-man { background-image: url("#{$imgDir}svg/icon-macro-man.svg"); }
+	&-macro-woman { background-image: url("#{$imgDir}svg/icon-macro-woman.svg"); }
+	&-macro-child { background-image: url("#{$imgDir}svg/icon-macro-child.svg"); }
+	&-macro-unisex { background-image: url("#{$imgDir}svg/icon-macro-unisex.svg"); }
+
+	&-check { background-image: url("#{$imgDir}svg/icon-check.svg"); }
+	&-link { background-image: url("#{$imgDir}svg/icon-link.svg"); }
+
+	&-sort-up { background-image: url("#{$imgDir}svg/icon-sort-up.svg"); }
+	&-sort-down { background-image: url("#{$imgDir}svg/icon-sort-down.svg"); }
+
+	&-search { background-image: url("#{$imgDir}svg/icon-search.svg"); }
+	&-upload { background-image: url("#{$imgDir}svg/icon-upload.svg"); }
+
+	&-total-commissioni { background-image: url("#{$imgDir}svg/icon-total-commissioni.svg"); }
+	&-total-ordini { background-image: url("#{$imgDir}svg/icon-total-ordini.svg"); }
+	&-total-prodotti { background-image: url("#{$imgDir}svg/icon-total-prodotti.svg"); }
+
+	&-flag-it { background-image: url("#{$imgDir}svg/flag-it.svg"); }
+	&-flag-en { background-image: url("#{$imgDir}svg/flag-en.svg"); }
+
+}

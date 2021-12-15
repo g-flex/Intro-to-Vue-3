@@ -1,0 +1,40 @@
+/*
+let totDropHeight = 0;
+let transitionDuration = 300;
+document.querySelectorAll('.dropdown>*').forEach(elem=>{ totDropHeight += elem.offsetHeight; });
+document.querySelector('.dropdown').style = 'max-height:'+totDropHeight+'px;';
+document.querySelector('.dropdown').classList.add('opacity');
+setTimeout(()=>{
+	document.querySelector('.dropdown').classList.remove('collapsed');
+	document.querySelector('.dropdown').classList.remove('opacity');
+	document.querySelector('.dropdown').removeAttribute('style');
+}, transitionDuration);
+*/
+
+.dropdown {
+	top: 100%;
+	left: 0;
+	width: 100%;
+	&, & * { transition: $dropdown_transition; }
+	&.collapsed {
+		max-height: 0;
+		overflow: hidden;
+		&, & * { opacity: .3; }
+	}
+	&.opacity, &.opacity * { opacity: 1; }
+}
+
+.dropdown-horizontal {
+	top: 0;
+	right: 0;
+	height: 100%;
+	width: 100%;
+	&, & * { transition: $dropdown_horizontal_transition; }
+	&.collapsed {
+		height: 100%;
+		overflow: hidden;
+		width: 0;
+		& *:not(.arrow-col) { opacity: .3; }
+	}
+	&.opacity, &.opacity * { opacity: 1; }
+}

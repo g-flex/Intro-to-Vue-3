@@ -1,0 +1,18 @@
+.form {
+	background-color: $bg_window_opacity;
+	width: 100%;
+	padding: $basePadding;
+	& > *:not(:last-child) {
+		margin-bottom: $baseMargin;
+	}
+
+	@media all and (max-width: 768px){
+		width: calc(100% - 2 * #{$baseMargin});
+		margin: 0 $baseMargin;
+		padding: $basePadding / 2;
+		& > *:not(:last-child) {
+			margin-bottom: 15px;
+		}
+	}
+
+}

@@ -1,0 +1,180 @@
+/*
+ESEMPIO:
+
+	<div class="switch">
+		<span>Genere preferito</span>
+		<div>
+			<p>Uomo</p>
+			<label>
+				<input type="checkbox">
+				<span></span>
+			</label>
+			<p>Donna</p>
+		</div>
+	</div>
+
+*/
+
+div.switch {
+
+	& > span {
+		text-align: left;
+		display: block;
+		color: $txt_2;
+		font-family: $font;
+		font-size: $font_size_small;
+		margin-bottom: 10px;
+	}
+
+	& > div {
+
+		@include flex;
+		@include alignFlex(center);
+		@include justifyFlex(start);
+		flex-direction: row;
+
+		& p {
+			@include truncateString(2);
+			max-width: percentColSubtract(50, 60px);
+			display: inline-block;
+			color: $txt_1;
+			font-family: $font;
+			font-weight: $font_weight;
+			font-size: $font_size;
+			@media all and (min-width: 769px) and (max-width: 900px) { font-size: $font_size_small; }
+			@media all and (max-width: 768px){ font-size: $font_size_small; }
+			@media all and (max-width: 300px){ font-size: $font_size_x_small; }
+			@media all and (max-width: 540px){ max-width: percentColSubtract(50, 50px); }
+		}
+
+		&>label {
+			position: relative;
+			display: inline-block;
+			width: 61px;
+			height: 33px;
+			margin-left: 30px;
+			margin-right: 30px;
+			& input {
+				width: 54px;
+				height: 0;
+				-moz-appearance: initial;
+				-webkit-appearance: unset;
+
+				&:before {
+					background-color: $state0;
+					left: -20px;
+				}
+				&:after {
+					background-color: $bg_textarea;
+					right: -20px;
+				}
+				&:checked:before { background-color: $bg_textarea; }
+				&:checked:after { background-color: $state0; }
+
+				&:checked + span:before {
+					-webkit-transform: translateX(26px);
+					-ms-transform: translateX(26px);
+					transform: translateX(26px);
+					-webkit-filter: none;
+					filter: none;
+				}
+
+				&:before, &:after{
+					@include transition(background-color);
+					@include pseudo;
+					width: 5px;
+					height: 5px;
+					top: 50%;
+					transform: translateY(-50%);
+				}
+			}
+			& span {
+				position: absolute;
+				cursor: pointer;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				background-color: $bg_textarea;
+				@include transition(all, .4s);
+				&:before {
+					@include pseudo;
+					@include transition(all, .4s);
+					height: 25px;
+					width: 25px;
+					left: 4px;
+					bottom: 3px;
+					background-color: $bg_btn;
+					-webkit-filter: saturate(0.2);
+					filter: saturate(0.2);
+					border: 1px solid $border_btn;
+				}
+			}
+			@media all and (max-width: 540px){
+				width: 31px;
+				height: 16px;
+				margin-left: 10px;
+				margin-right: 10px;
+				& input {
+					width: 27px;
+					&:before, &:after {
+						width: 3px;
+						height: 3px;
+					}
+					&:before { left: -6px }
+					&:after { right: -6px }
+					&:checked + span:before {
+						-webkit-transform: translateX(13px);
+						-ms-transform: translateX(13px);
+						transform: translateX(13px);
+				   	}
+				}
+				& span:before {
+					height: 12px;
+					width: 12px;
+					bottom: 1px;
+					left: 2px;
+				}
+			}
+
+		}
+
+	}
+
+	@media all and (max-width: 1801px) {
+		&-small > div {
+			& p {
+				max-width: percentColSubtract(50, 30px);
+				font-size: $font_size_small;
+				line-height: $font_size_small;
+			}
+			& > label {
+				width: 39px;
+				min-width: 39px;
+				height: 21px;
+				margin-left: 10px;
+				margin-right: 10px;
+				& input {
+					width: 23px;
+					&:before, &:after {
+						width: 3px;
+						height: 3px;
+					}
+					&:before { left: -6px }
+					&:after { right: -6px }
+					&:checked + span:before {
+						-webkit-transform: translateX(18px);
+						-ms-transform: translateX(18px);
+						transform: translateX(18px);
+					}
+				}
+				& span:before {
+					height: 15px;
+					width: 15px;
+					bottom: 2px;
+					left: 2px;
+				}
+			}
+		}
+	}
+}

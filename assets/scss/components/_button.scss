@@ -1,0 +1,106 @@
+/*
+
+REQUIRES _icon.scss
+
+ESEMPIO:
+
+	<div class="button">
+		<div><p>Logout</p></div>
+	</div>
+
+	<div class="button positive">
+		<div><p>Save</p></div>
+	</div>
+
+	<div class="button">
+		<div><div class="icon icon-tel"></div></div>
+		<div><p>Telefono</p></div>
+	</div>
+
+*/
+
+div.button {
+	@include noSelect;
+	@include centered;
+	@include fitContent;
+	min-width: 60px;
+	max-width: 100%;
+	flex-direction: row;
+	border: 1px solid $border_btn;
+	background-color: $bg_btn;
+	color: $txt_btn;
+	padding: 5px 10px;
+	-webkit-transition: background-color .2s $transition, transform .1s $transition;
+	-o-transition:  background-color .2s $transition, transform .1s $transition;
+	transition: background-color .2s $transition, transform .1s $transition;
+	font-size: $font_size;
+	line-height: $font_size;
+	font-weight: $font_weight;
+	cursor: pointer;
+	text-align: center;
+
+	&.positive { background-color: $bg_btn_menu; }
+
+	@media all and (max-width: 1800px) { font-size: $font_size_small; }
+	@media all and (max-width: 300px) {
+		min-width: auto;
+		padding: #{$basePadding / 5} 0;
+	}
+
+	& > div {
+		@include centered;
+		//width: 25px;
+
+		&:last-child { @include truncateString; }
+		@media all and (max-width: 300px) {
+			//max-width: 100%;
+			& .icon { display: none; }
+		}
+	}
+
+	& p {
+		@include truncateString;
+		margin: 0;
+	}
+
+	&:active { @include activeButton;}
+	&:hover { background-color: $bg_btn_hover; }
+
+	& .icon {
+		height: 20px;
+		width: 20px;
+		@media all and (max-width: 768px) {
+			height: 15px;
+			width: 15px;
+		}
+	}
+
+	&.upload-button {
+		min-width: 150px;
+		border-style: dashed;
+		padding: 8px 15px;
+		color: $bg_titlebar_dark;
+		font-size: 14px;
+		background-size: contain;
+		background-repeat: no-repeat;
+		background-position: center;
+		& .icon {
+			width: 15px;
+			height: 15px;
+		}
+		&:hover { background-color: $bg_btn_menu; }
+		@media all and (max-width: 1080px) {
+			padding: 6px 10px;
+		}
+		@media all and (min-width: 769px) and (max-width: 900px) {
+			min-width: 100px;
+		}
+		@media all and (max-width: 768px) {
+			border-style: solid;
+			padding: 6px 8px;
+			max-width: 100%;
+			font-size: $font_size_small;
+		}
+	}
+
+}

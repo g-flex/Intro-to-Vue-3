@@ -1,0 +1,74 @@
+/*
+ESEMPIO:
+
+	<div class="feedback">
+		<div class="feedback-count">
+			<p>Totale: 665</p>
+		</div>
+		<div class="feedback-stars">
+			<div class="star"></div>
+			<div class="star"></div>
+			<div class="star"></div>
+			<div class="star"></div>
+			<div class="star star-half"></div>
+			<div class="feedback-average">
+				<p>4,4</p>
+			</div>
+		</div>
+	</div>
+
+*/
+
+div.feedback {
+	@include reducedPadding;
+
+	&-average {
+		display: inline-block;
+		color: $txt_feedback;
+	}
+	&-count {
+		display: block;
+		text-align: left;
+		width: 100%;
+		font-size: 14px;
+		color: $txt_feedback;
+		margin-bottom: 5px;
+	}
+
+	& .feedback-stars {
+		@include row;
+		@include alignFlex(center);
+		@include justifyFlex(start);
+		@media all and (max-width: 1080px) {
+			flex-wrap: wrap;
+		}
+	}
+
+	& .star {
+		width: 20px;
+		height: 20px;
+		background-repeat: no-repeat;
+		background-size: contain;
+		background-image: url("#{$imgDir}svg/icon-star.svg");
+		display: inline-block;
+
+		&:not(:last-of-type) { margin-right: 5px; }
+
+		&-half { background-image: url("#{$imgDir}svg/icon-half-star.svg"); }
+		&-disabled { background-image: url("#{$imgDir}svg/icon-star-disabled.svg"); }
+
+		@media all and (max-width: 1260px) {
+			width: 15px;
+			height: 15px;
+		}
+		@media all and (min-width: 769px) and (max-width: 1080px) {
+			&:not(:last-of-type) { margin-right: 2px; }
+		}
+		@media all and (max-width: 300px) {
+			width: 10px;
+			height: 10px;
+		}
+
+	}
+
+}

@@ -1,0 +1,84 @@
+/*
+
+	<div class="page-buttons ">
+		<div class="button-icon button-icon-left"></div>
+		<div class="number-buttons">
+			<div class="number-button">1</div>
+			<div class="number-button">2</div>
+			<div class="number-button">3</div>
+			<div class="number-button">4</div>
+			<div class="number-button">...</div>
+		</div>
+		<div class="button-icon button-icon-right"></div>
+	</div>
+
+*/
+
+.page-buttons {
+	@include centered;
+	@include noSelect;
+	width: 100%;
+	padding: $basePadding 0;
+	@media all and (max-width: 540px){
+		padding: $basePadding/2 0;
+	}
+
+	& .number-buttons {
+		@include centered;
+		padding: 0 40px;
+		font-size: $font_size;
+		color: $txt_1;
+		@media all and (max-width: 900px){
+			padding: 0 25px;
+			font-size: $font_size_small;
+		}
+		@media all and (max-width: 540px){
+			padding: 0 15px;
+		}
+		@media all and (max-width: 300px){
+			padding: 0 10px;
+			font-size: $font_size_x_small;
+		}
+		& .number-button {
+			@include centered;
+			@include transition(background-color, .2s);
+			&:hover { background-color: $bg_btn_hover; }
+			cursor: pointer;
+			background-color: $bg_menu;
+			width: 25px;
+			height: 25px;
+			&:not(:last-child) { margin-right: 25px; }
+			&.active {
+				border: 1px solid $border_btn;
+				background-color: $bg_btn_menu_active;
+			}
+			&:active { @include activeButton(.95); }
+			@media all and (max-width: 900px){
+				&:not(:last-child) { margin-right: 15px; }
+			}
+			@media all and (max-width: 360px){
+				&:not(:last-child) { margin-right: 10px; }
+			}
+			@media all and (max-width: 300px){
+				width: 15px;
+				height: 15px;
+			}
+		}
+	}
+
+	& .button-icon {
+		cursor: pointer;
+		width: 20px;
+		height: 20px;
+		&:active { @include activeButton(.95); }
+		@media all and (max-width: 540px){
+			width: 15px;
+			height: 15px;
+		}
+		@media all and (max-width: 300px){
+			width: 10px;
+			height: 10px;
+		}
+	}
+
+}

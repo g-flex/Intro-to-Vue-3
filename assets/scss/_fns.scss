@@ -1,0 +1,13 @@
+@function percentCol($num) {
+	$finalNum: $num / 12 * 100%;
+	@return $finalNum;
+}
+
+@function percentColSubtract($percent, $subtracting: 0px) {
+	@return calc((100% - #{$subtracting}) * #{$percent}/100);
+}
+
+@function colSubtract($value, $subtracting) {
+	$finalNum: $value / 12;
+	@return calc((100% - #{$subtracting}) * #{$finalNum});
+}

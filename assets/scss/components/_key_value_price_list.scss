@@ -1,0 +1,65 @@
+.key-value-price-list-container {
+	@include centered;
+	@include columnFlex;
+	margin: 0 auto;
+	position: relative;
+	width: 100%;
+
+	& p {
+		font-size: $font_size_small;
+		line-height: #{$font_size_small + 2px};
+		@media all and (max-width: 768px){
+			font-size: $font_size_x_small;
+			line-height: #{$font_size_x_small + 2px};
+		}
+	}
+	& .kvp-list-row {
+		@include row;
+		@include justifyFlex(center);
+		width: 100%;
+
+		&:not(:last-child) { margin-bottom: $baseMargin / 2; }
+		&:last-child > *:first-child{ font-weight: $font_weight_bold; }
+
+		& > .kvp-list-content {
+			@include flex;
+			@include alignFlex(center);
+			@include justifyFlex(start);
+			@include wordWrap;
+			text-align: left;
+			&:first-child { width: 25%; }
+			&:not(:first-child):not(:last-child) { width: 40%; }
+			&:last-child { width: 35%; }
+		}
+
+		& > .kvp-list-content:not(:first-child) {
+			padding-left: $basePadding;
+			@media all and (max-width: 1620px) { padding-left: #{$basePadding / 2}; }
+			@media all and (max-width: 1260px) { padding-left: #{$basePadding / 3}; }
+			@media all and (max-width: 900px) { padding-left: #{$basePadding / 4}; }
+		}
+
+	}
+
+	&:before, &:after {
+		@include pseudo;
+		height: 100%;
+		width: 1px;
+		top: 0;
+		background-color: $txt_1;
+	}
+	&:before {
+		left: calc(25% + #{$basePadding/2});
+		@media all and (max-width: 1620px) { left: calc(25% + #{$basePadding/4}); }
+		@media all and (max-width: 1260px) { left: calc(25% + #{$basePadding/6}) }
+		@media all and (max-width: 900px) { left: calc(25% + #{$basePadding/8}) }
+	}
+	&:after {
+		right: calc(35% - #{$basePadding/2});
+		@media all and (max-width: 1620px) { right: calc(35% - #{$basePadding/4}); }
+		@media all and (max-width: 1260px) { right: calc(35% - #{$basePadding/6}) }
+		@media all and (max-width: 900px) { right: calc(35% - #{$basePadding/8}) }
+
+	}
+
+}

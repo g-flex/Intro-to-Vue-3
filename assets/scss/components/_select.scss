@@ -1,0 +1,65 @@
+/*
+Esempio:
+
+<div class="select permission-select">
+	<div class="col-grow"><p>Seleziona permessi</p></div>
+	<div class="col-shrink"><div class="button-icon button-icon-down"></div></div>
+	<div class="select-dropdown dropdown collapsed">
+		<div class="col-12">
+			<div class="select-button"><p>Amministratore</p></div>
+			<div class="select-button"><p>Editor livello 1</p></div>
+			<div class="select-button"><p>Editor livello 2</p></div>
+		</div>
+	</div>
+</div>
+
+*/
+
+div.select{
+	@include row;
+	@include justifyFlex(between);
+	@include alignFlex(center);
+	@include noSelect;
+	overflow: initial;
+	position: relative;
+	padding: 0 10px;
+	background-color: $bg_titlebar_dark;
+	color: $white;
+	cursor: pointer;
+	height: 30px;
+
+	&>.col-grow, &>.col-grow p {
+		@include wordWrap;
+		@include truncateString(2);
+	}
+
+	&>.col-grow {
+		@include row;
+		@include alignFlex(center);
+	}
+
+	&-dropdown {
+		@include boxShadow;
+		@include smallScrollbar;
+		max-height: 300px;
+		position: absolute;
+		width: 100%;
+		background-color: $white;
+		color: $txt_1;
+		z-index: 1;
+		overflow-y: auto;
+	}
+
+	& .select-button {
+		@include row;
+		@include justifyFlex(start);
+		@include alignFlex(center);
+		@include hoverButton;
+		width: 100%;
+		padding: 15px;
+		cursor: pointer;
+	}
+	@media all and (max-width: 768px) {
+		& .select-button { padding: 10px; }
+	}
+}

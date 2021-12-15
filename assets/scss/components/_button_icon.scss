@@ -1,0 +1,17 @@
+div.button-icon {
+	@include icon;
+
+	&-down { background-image: url("#{$imgDir}svg/icon-down.svg"); }
+	&-left { background-image: url("#{$imgDir}svg/icon-left.svg"); }
+	&-right { background-image: url("#{$imgDir}svg/icon-right.svg"); }
+	&-arrow-left-white { background-image: url("#{$imgDir}svg/icon-arrow-left-white.svg"); }
+	&-arrow-right-white { background-image: url("#{$imgDir}svg/icon-arrow-right-white.svg"); }
+	&-up { background-image: url("#{$imgDir}svg/icon-up.svg"); }
+	&-plus { background-image: url("#{$imgDir}svg/icon-plus.svg"); }
+	&-position { background-image: url("#{$imgDir}svg/icon-position.svg"); }
+	&-minus { background-image: url("#{$imgDir}svg/icon-minus.svg"); }
+	&-tick { background-image: url("#{$imgDir}svg/icon-tick.svg"); }
+	&-star { background-image: url("#{$imgDir}svg/icon-star.svg"); }
+	&-x { background-image: url("#{$imgDir}svg/icon-x.svg"); }
+
+}

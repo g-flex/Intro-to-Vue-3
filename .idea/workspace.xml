@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="b7b45935-c71d-4bf3-add3-22423b3df3e6" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/style.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/_base.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/_components.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/_fns.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/_mixins.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/_structure.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/_variables.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/components/_button.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/components/_button_icon.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/components/_checkbox.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/components/_counter.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/components/_default_list.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/components/_dropdown.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/components/_dropdown_button_row.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/components/_feedback.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/components/_form.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/components/_icon.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/components/_key_value_list.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/components/_key_value_price_list.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/components/_list_bullets_lines.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/components/_loader.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/components/_menu_button.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/components/_pages_buttons.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/components/_pre.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/components/_radio.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/components/_select.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/components/_state_tag.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/components/_switch.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/components/_textarea.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/components/_vanilla_calendar.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/index.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/style.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/styles.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/main.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="ProjectId" id="22Js9EaIXFV2q9zjaNCoY9WVW5R" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/assets" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="watcher.settings" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/assets" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b7b45935-c71d-4bf3-add3-22423b3df3e6" name="Changes" comment="" />
+      <created>1639566870777</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1639566870777</updated>
+      <workItem from="1639566872121" duration="1917000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+</project>

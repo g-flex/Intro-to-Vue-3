@@ -1,0 +1,261 @@
+//display flex con polyfill
+@mixin flex {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+}
+
+//setta la colonna (in dodicesimi)
+@mixin col($dim, $widthDim: 2) {
+	$finalFlex: 1;
+	$finalWidth: 100%;
+	@if $dim == grow {
+		$finalFlex: 1;
+		$finalWidth: unset;
+	}
+	@else if $dim == shrink {
+		$finalFlex: unset;
+		$finalWidth: percentCol($widthDim);
+	}
+	@else {
+		$finalFlex: 0 0 percentCol($dim);
+		$finalWidth: percentCol($dim);
+	}
+	@include flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	flex: $finalFlex;
+	max-width: $finalWidth;
+}
+
+//row con polyfill
+@mixin row() {
+	@include flex;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: row;
+	flex-direction: row;
+}
+
+//d-flex, jcc: center, align:center
+@mixin centered {
+	@include flex;
+	@include justifyFlex(center);
+	@include alignFlex(center);
+}
+
+//justify-content con polyfill
+//accetta start, center, between, around, evenly
+@mixin justifyFlex($pos: start) {
+	$flexPos: flex-#{$pos};
+	@if $pos == center { $flexPos: $pos; }
+	@else if $pos == between {
+		$pos: justify;
+		$flexPos: space-between;
+	}
+	@else if $pos == around {
+		$pos: distribute;
+		$flexPos: space-around;
+	}
+	@else if $pos == evenly {
+		$pos: space-evenly;
+		$flexPos: space-evenly;
+	}
+	-webkit-box-pack: $pos;
+	-ms-flex-pack: $pos;
+	justify-content: $flexPos;
+}
+
+//align-items con polyfill
+//accetta start, center, end
+@mixin alignFlex($pos: start) {
+	$flexPos: flex-#{$pos};
+	@if $pos == center { $flexPos: $pos; }
+	-webkit-box-align: $pos;
+	-ms-flex-align: $pos;
+	align-items: $flexPos;
+}
+
+//flex-direction: column con polyfill
+@mixin columnFlex() {
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
+	flex-direction: column;
+}
+
+//setta la width della col fino alla max-width specificata
+@mixin mobileFlex($percentage, $max-width: 768px) {
+	@media all and (max-width: $max-width) {
+		flex: 0 0 $percentage;
+		max-width: $percentage;
+	}
+}
+
+//sotto i 768: col-12
+@mixin mobileFullW {
+	@include mobileFlex(100%);
+}
+
+//toglie l'ombra della selezione (es sugli elementi circostanti quando clicchi)
+@mixin noSelect {
+	user-select: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+}
+
+//mette i puntini alla fine. Da mettere al CONTENITORE
+//nb: se metti più di una $line, ti cambia la proprietà DISPLAY dell'elemento
+@mixin truncateString($lines: 1, $forced: false) {
+	overflow: hidden;
+	-o-text-overflow: ellipsis;
+	text-overflow: ellipsis;
+	@if($lines > 1 or $forced) {
+		display: -webkit-box;
+		-webkit-box-orient: vertical;
+		-webkit-line-clamp: $lines;
+		white-space: normal;
+	}
+	@else { white-space: nowrap; }
+	//max-width: 100%;
+}
+
+//spezza le parole lunghe per mandarle a capo se non hanno spazio sulla riga
+@mixin wordWrap() {
+	-ms-hyphens: auto;
+	-moz-hyphens: auto;
+	-webkit-hyphens: auto;
+	hyphens: auto;
+	overflow-wrap: break-word;
+	word-wrap: break-word;
+	-ms-word-break: break-all;
+	word-break: break-all;
+	word-break: break-word;
+}
+
+//fit-content con polyfill
+@mixin fitContent($height: false) {
+	@if $height == false {
+		width: -webkit-fit-content;
+		width: -moz-fit-content;
+		width: fit-content;
+	}
+	@else {
+		height: -webkit-fit-content;
+		height: -moz-fit-content;
+		height: fit-content;
+	}
+}
+
+//NECESSITA VARIABILE $basePadding
+//padding che diminuisce insieme alla viewport
+@mixin reducedPadding {
+	padding: $basePadding / 2;
+	@media all and (max-width: 900px) { padding: #{$basePadding / 3}; }
+	@media all and (max-width: 768px) { padding: #{$basePadding / 4}; }
+}
+
+//reducedPadding solo ai lati. accetta misura fissa per padding verticale
+@mixin reducedPaddingHorizontal($top: 0) {
+	padding: $top $basePadding / 2;
+	@media all and (max-width: 1260px) { padding: $top #{$basePadding / 3}; }
+	@media all and (max-width: 900px) { padding: $top #{$basePadding / 4}; }
+	@media all and (max-width: 768px) { padding: $top #{$basePadding / 5}; }
+}
+
+//transition con polyfill
+//purtroppo una sola proprietà accettata. puoi usare all
+@mixin transition($object:all, $timing:0.3s, $fn:$transition) {
+	$returning: #{$object} #{$timing} #{$fn};
+	-webkit-transition: $returning;
+	-o-transition:  $returning;
+	transition:  $returning;
+}
+
+//lo do a tutti i bottoni, per active e per hover
+@mixin activeButton($scale:0.98) {
+	-webkit-transform: scale($scale);
+	-ms-transform: scale($scale);
+	transform: scale($scale);
+}
+@mixin hoverButton {
+	background-image: url("#{$rootDir}img/circle.svg");
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: 0 0;
+	&:hover {
+		@include transition(background-size, .2s);
+		background-size: 600px 600px;
+		transition: background-size .2s $transition;
+		@media all and (max-width: 5400px) { background-size: 5400px 5400px; }
+		@media all and (max-width: 4680px) { background-size: 4680px 4680px; }
+		@media all and (max-width: 3960px) { background-size: 3960px 3960px; }
+		@media all and (max-width: 3240px) { background-size: 3240px 3240px; }
+		@media all and (max-width: 2520px) { background-size: 2520px 2520px; }
+		@media all and (max-width: 1440px) { background-size: 1440px 1440px; }
+		@media all and (max-width: 768px) { background-size: 768px 768px; }
+	}
+}
+
+//mi risparmia una riga in tutti gli pseudo elementi
+@mixin pseudo {
+	content: "";
+	position: absolute;
+}
+
+//pseudo elemento rettangolare (con cui di solito ci faccio linee spesse 1px o 2px)
+@mixin pseudoLine($height:1px, $width:100%, $top:0, $left:0, $bgColor: $txt_1) {
+	@include pseudo;
+	height: $height;
+	width: $width;
+	top: $top;
+	left: $left;
+	background-color: $bgColor;
+}
+
+@mixin boxShadow {
+	-webkit-box-shadow: 0 1px 2px 0 rgba(60,64,67,.30),0 2px 6px 2px rgba(60,64,67,.15);
+	box-shadow: 0 1px 2px 0 rgba(60,64,67,.30),0 2px 6px 2px rgba(60,64,67,.15);
+}
+@mixin icon {
+	display: inline-block;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	min-height: 15px;
+	min-width: 15px;
+	height: 15px;
+	width: 15px;
+}
+@mixin hideScrollbar {
+	&::-webkit-scrollbar { display: none; }
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+}
+@mixin smallScrollbar {
+	&::-webkit-scrollbar {
+		width: 8px;
+		height: 8px;
+	}
+	&::-webkit-scrollbar-thumb {
+		background-color: rgba($bg_titlebar_dark, .6);
+		border-radius: 10px;
+		width: 8px;
+		height: 8px;
+		&:hover { background-color: rgba($bg_titlebar_dark, .8); }
+		&:active { background-color: $bg_titlebar_dark; }
+	}
+	scrollbar-width: thin;
+	scrollbar-color: $bg_titlebar_dark;
+}
+
+//questo lo uso per un bug che ho avuto con i transform nei bottoni
+@mixin backfaceHidden {
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+}

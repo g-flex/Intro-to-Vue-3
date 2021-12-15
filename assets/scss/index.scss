@@ -1,0 +1,14 @@
+html {
+  overflow-x: hidden;
+}
+body {
+  background-color: $bg-primary;
+  background-image: $bg_body;
+  background-repeat: no-repeat;
+  position: relative;
+  min-height: 120vh;
+}
+
+.container {
+  padding: 20px;
+}

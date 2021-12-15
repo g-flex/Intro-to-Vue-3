@@ -1,0 +1,83 @@
+/*
+ESEMPIO:
+
+	<label class="checkbox">
+		<p>Spedito</p>
+		<input type="checkbox" checked="checked">
+		<span></span>
+	</label>
+
+	<label class="checkbox">
+		Pagato
+		<input type="checkbox" checked="checked">
+		<span></span>
+	</label>
+
+	function validateCheckbox() {
+		if (document.querySelector('.checkbox input').checked) {
+			alert("checked check");
+		} else {
+			alert("You didn't check checkbox!");
+		}
+	}
+
+*/
+
+label.checkbox {
+	@include noSelect;
+	display: block;
+	position: relative;
+	padding-left: 35px;
+	margin-bottom: 12px;
+	cursor: pointer;
+	font-size: 16px;
+	font-weight: $font_weight;
+
+	& input {
+		position: absolute;
+		opacity: 0;
+		cursor: pointer;
+		height: 0;
+		width: 0;
+
+		&:checked ~ span {
+			background-color: rgba($txt_2, .8);
+		}
+		&:checked ~ span:after {
+			opacity: 1;
+		}
+	}
+
+	& span {
+		position: absolute;
+		display: block;
+		top: 0;
+		left: 0;
+		height: 16px;
+		width: 16px;
+		background-color: rgba($txt_2, .8);
+
+		&:after {
+			@include transition(opacity, 50ms);
+			@include pseudo;
+			opacity: 0;
+			left: 5px;
+			top: 5px;
+			width: 6px;
+			height: 6px;
+			background-color: $white;
+		}
+
+		&:before {
+			@include pseudo;
+			display: block;
+			left: 2px;
+			top: 2px;
+			width: 10px;
+			height: 10px;
+			border: 1px solid rgba($white, .5);
+		}
+
+	}
+
+}

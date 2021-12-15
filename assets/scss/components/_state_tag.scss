@@ -1,0 +1,131 @@
+/*
+ESEMPIO:
+
+	<div class="state state-3">
+		<span>In Lavorazione</span>
+	</div>
+
+	<div class="state-info">
+		<span class="label">Tracking</span>
+		<a href="#" class="message">Guarda la mappa</a>
+		<div class="icon icon-link"></div>
+	</div>
+
+	<div class="state-info">
+		<span class="label">Tempo stimato</span>
+		<p>Spedizione in 24h</p>
+	</div>
+
+*/
+
+div.state, .list-col div.state {
+	@include fitContent;
+	@include noSelect;
+	@include flex;
+	@include justifyFlex(start);
+	@include alignFlex(center);
+	text-transform: uppercase;
+	height: 24px;
+	padding: 5px;
+	font-weight: $font_weight_bold;
+	border: none;
+	text-align: left;
+	max-width: 100%;
+	background-color: $bg_state;
+
+	&:before {
+		content: "";
+		height: 15px;
+		width: 15px;
+	}
+	& span {
+		@include truncateString;
+		font-size: $font_size_small;
+		line-height: $font_size_small;
+		color: $txt_1;
+		margin-left: 10px;
+		max-width: calc(100% - 25px);
+	}
+
+	&-checked {
+		background-color: transparent;
+		text-transform: none;
+		padding: 0;
+	}
+
+	&-checked:before{
+		background-image: url("#{$imgDir}svg/icon-check.svg");
+		background-size: contain;
+		background-repeat: no-repeat;
+	}
+	&-0:before{ background-color: $state0; }
+	&-1:before{ background-color: $state1; }
+	&-2:before{ background-color: $state2; }
+	&-3:before{ background-color: $state3; }
+	&-4:before{ background-color: $state4; }
+	&-5:before{ background-color: $state5; }
+	&-6:before{ background-color: $state6; }
+	&-7:before{ background-color: $state5; }
+	&-8:before{ background-color: $state4; }
+	&-9:before{ background-color: $state3; }
+	&-10:before{ background-color: $state2; }
+	&-11:before{ background-color: $state5; }
+	&-12:before{ background-color: $state4; }
+	&-13:before{ background-color: $state1; }
+	&-14:before{ background-color: $state6; }
+	&-15:before{ background-color: $state5; }
+	&-16:before{ background-color: $state5; }
+	&-17:before{ background-color: $state5; }
+	&-18:before{ background-color: $state1; }
+
+	@media (all and max-width: 768px) {
+
+		padding: 5px;
+		&.state-checked { padding: 0; }
+		&:not(.state-checked) span {
+			margin-left: 0;
+			max-width: 100%;
+			color: $white;
+			font-size: $font_size_x_small;
+		}
+
+		&:not(.state-checked):before { display: none; }
+		&-0 { background-color: $state0; }
+		&-1 { background-color: $state1; }
+		&-2 { background-color: $state2; }
+		&-3 { background-color: $state3; }
+		&-4 { background-color: $state4; }
+	}
+
+}
+.state-info {
+	width: 100%;
+	& .icon {
+		height: 12px;
+		width: 12px;
+		margin-right: 0;
+		margin-left: 2px;
+		margin-bottom: -2px;
+	}
+	& .label {
+		font-size: $font_size_x_small;
+		color: $txt_secondary;
+		margin-bottom: 5px;
+		display: block;
+	}
+	& .message {
+		font-size: $font_size_small;
+		line-height: 20px;
+		color: $txt_1;
+	}
+	& a {
+		display: inline;
+		color: $txt_1;
+		text-decoration: none;
+		border-bottom: 1px solid $txt_1;
+		&:active {
+			color: $border_btn;
+			&:active { border-color: $border_btn; }
+		}
+	}
+}
