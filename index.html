@@ -22,8 +22,9 @@
 		</div>
 		<div class="row centered">
 			<!-- v-if -> puts/removes element from the dom -->
-			<div class="col-12 mt-200" v-if="isBtc"><h3>Is BTC</h3></div>
-			<div class="col-12 mt-200" v-else><h3>Is SOL</h3></div>
+			<div class="col-12 mt-200" v-if="isBtc===true"><h3>Is BTC</h3></div>
+			<div class="col-12 mt-200" v-else-if="isBtc === 'SOL'"><h3>Is SOL</h3></div>
+			<div class="col-12 mt-200" v-else><h3>Is other crypto</h3></div>
 			<!-- ALSO ACHIEVABLE with this notation, which adds style: display: none;
 			<div class="col-12 mt-30" v-show="isBtc"><h3>Is BTC</h3></div>
 			<div class="col-12 mt-30" v-show="!isBtc"><h3>Is SOL</h3></div>-->
