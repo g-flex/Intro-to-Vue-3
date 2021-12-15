@@ -15,7 +15,7 @@
 				<p>{{description()}}</p>
 				<div class="col-12 centered">
 					<div class="col-3 mt-50">
-						<img :src="imgSrc">
+						<img :src="imgSrc" @click="()=>{console.log('clicked img')}">
 					</div>
 				</div>
 			</div>
@@ -34,11 +34,11 @@
 	<div class="container" v-for="crypto in supportedCryptos">
 		<div class="row centered">
 			<div class="col-6 mobile-12">
-				<form @submit="submitForm($event)" :id="'explore-'+crypto.symbol.toLowerCase()+'-form'">
+				<form @submit="submitForm($event, crypto.fn)" :id="'explore-'+crypto.symbol.toLowerCase()+'-form'">
 					<h2>{{crypto.name}}</h2>
 					<div class="input">
 						<label :for="crypto.symbol.toLowerCase()+'-address-input'">Insert address</label>
-						<input :key="crypto.symbol" placeholder="bc1000aaa000aaa000aaa000" type="text" :name="crypto.symbol.toLowerCase()+'-address-input'" :id="crypto.symbol.toLowerCase()+'-address-input'" value="" />
+						<input :key="crypto.symbol" :placeholder="crypto.placeholder" type="text" :name="crypto.symbol.toLowerCase()+'-address-input'" :id="crypto.symbol.toLowerCase()+'-address-input'" value="" />
 					</div>
 					<pre class="pre"><code></code></pre>
 				</form>
