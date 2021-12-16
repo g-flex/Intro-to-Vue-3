@@ -16,7 +16,7 @@ const app = Vue.createApp({
                     border: '2px solid '+COLORS.txt_1
                 }
             },
-            currLoaderName: null,
+            currLoaderName: '',
             showingLoader: true
         };
     },
