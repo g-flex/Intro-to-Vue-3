@@ -16,16 +16,10 @@ const app = Vue.createApp({
                     border: '2px solid '+COLORS.txt_1
                 }
             },
-            currLoaderName: '',
             showingLoader: true
         };
     },
     methods: {
-        showLoader(show = true, name = '') {
-            console.log(this)
-            this.showingLoader = show;
-            this.currLoaderName = name;
-        },
         submitForm: (e, fn) => {
             e.preventDefault();
             this.submitQuery(e.currentTarget, fn);
